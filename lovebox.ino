@@ -134,6 +134,9 @@ void setup() {
 }
 
 void loop() {
+  if (WiFi.status() != WL_CONNECTED) {
+    wifiConnect();
+  }
   if(wasRead) {
     getGistMessage();   
   }
