@@ -1,5 +1,9 @@
 **this is a fork from @julisa99'a original code**
 
+See [https://frightanic.com/iot/the-lovebox-a-gift-from-a-maker/]() for my project report and a description of the code improvements I integrated.
+
+↓↓↓ original README of the upstream (i.e. forked) repo ↓↓↓
+
 ❤️ Lovebox ❤️
 ===
 DIY project to lasercut a lovebox inspired from https://en.lovebox.love/. It was a homemade Christmas present for my mom. So I can send her messages or pictures at any time to start the day motivated. When a new message is received, the heart moves in front of the box. It stops as soon as the message has been read (more specifically the built-in brightness sensor reacts when the box is opened). Have fun building your own!
