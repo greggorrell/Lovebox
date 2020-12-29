@@ -3,6 +3,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <Servo.h>
+#include <TZ.h>
 #include "SSD1306Wire.h"
 
 const int fetchIntervalMillis = _fetchIntervalSeconds * 1000;
@@ -44,20 +45,26 @@ void drawMessage(const String& message) {
 
 // Set time via NTP, as required for x.509 validation
 void setClock() {
-  configTime(3 * 3600, 0, "pool.ntp.org", "time.nist.gov");
+  // General C time functions: https://en.wikipedia.org/wiki/C_date_and_time_functions
+  // Pick a timezone from https://github.com/esp8266/Arduino/blob/master/cores/esp8266/TZ.h
+  configTime(TZ_Europe_Zurich, "pool.ntp.org");
 
   Serial.print("Waiting for NTP time sync: ");
   time_t now = time(nullptr);
-  while (now < 8 * 3600 * 2) {
+  // 1546300800 = 01/01/2019 @ 12:00am (UTC)
+  while (now < 1546300800) {
     delay(500);
     Serial.print(".");
     now = time(nullptr);
   }
-  Serial.println("");
-  struct tm timeinfo;
-  gmtime_r(&now, &timeinfo);
-  Serial.print("Current time: ");
-  Serial.print(asctime(&timeinfo));
+  Serial.println();
+  time_t nowUtc = mktime(gmtime(&now));
+
+  Serial.print("Local time: ");
+  Serial.print(ctime(&now));
+  Serial.print("UTC:        ");
+  Serial.print(ctime(&nowUtc));
+  Serial.println();
 }
 
 void wifiConnect() {
@@ -148,7 +155,6 @@ void setup() {
   wifiConnect();
   setClock();
 
-  String readStateText = wasRead ? "was" : "wasn't";
   Serial.printf("Initial state: last processed id '%c' %s read.\n", idSaved, (wasRead ? "was" : "wasn't"));
 }
 
