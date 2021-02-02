@@ -6,7 +6,7 @@ See [https://frightanic.com/iot/the-lovebox-a-gift-from-a-maker/]() for my proje
 
 ❤️ Lovebox ❤️
 ===
-DIY project to lasercut a lovebox inspired from https://en.lovebox.love/. It was a homemade Christmas present for my mom. So I can send her messages or pictures at any time to start the day motivated. When a new message is received, the heart moves in front of the box. It stops as soon as the message has been read (more specifically the built-in brightness sensor reacts when the box is opened). Have fun building your own!
+DIY project for sending someone messages or pictures at any time. When a new message is received the heart moves in front of the box. It stops as soon as the message has been read (more specifically the built-in brightness sensor reacts when the box is opened).
 
 ![](https://i.imgur.com/5MPBxsc.jpg)
 ![](https://github.com/julisa99/Lovebox/blob/master/docs/images/demo_lovebox.gif)
