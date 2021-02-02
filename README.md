@@ -23,13 +23,11 @@ DIY project for sending someone messages or pictures at any time. When a new mes
 10. [Darkening foil/dazzle strip](https://www.amazon.de/dp/B001CC6VYO)
 
 ## Composition 
-Below you can see where the OLED display, the light sensor with resistor and the servo motor are connected to the WeMos D1 Mini. The second photo is the soldered assembly. As you can see the micro-USB connector of the microcotroller board is at the ground. On top of the microcontroller a perfboard is soldered. Now the servo motor is added and also soldered to the perfboard. Notice the resistor and the light sensor that are also soldered to the board, with the light sensor pointing up. The display is soldered to another perfboard. The board provides a flat surface to hold the display in place. It is put on the motor and is connected to the other perfboard by using a Breakaway PCB Connector. It serves as a spacer to hold the other board above the motor.
+Below you can see how the OLED display, the light sensor with resistor and the servo motor are connected to the WeMos D1 Mini. The second photo is the soldered assembly. As you can see the micro-USB connector of the microcotroller board is at the ground. On top of the microcontroller a perfboard is soldered. Now the servo motor is added and also soldered to the perfboard. Notice the resistor and the light sensor that are also soldered to the board, with the light sensor pointing up. The display is soldered to another perfboard. The board provides a flat surface to hold the display in place. It is placed on the motor and is connected to the other perfboard by using a Breakaway PCB Connector. It serves as a spacer to hold the other board above the motor.
 ![](https://i.imgur.com/6L2zcLs.png)
 ![](https://i.imgur.com/Y3Lg5tn.jpg)
 
 After finishing the electronics, you have to cut the case, cap and hearts out of the 3mm wood and the display out of the 1mm acryl with a lasercutter. For that [four SVGs are provided](https://github.com/julisa99/Lovebox/tree/master/lasercut_files) containing the cutting plan. Then you have to glue the little heart on the larger heart and paint it red. After that, you have to cut with scissors the size of the display out of the darkening foil and put it on the acryl display. Finally, stuck the white servo horn into the back of the heart.
-
-![](https://i.imgur.com/y2joo0B.jpg)
 
 The last step is to assemble the case and the cap. Now you can put the hardware inside the case and program the microcontroller.
 
@@ -43,5 +41,9 @@ The microcontroller will then always call your text document on gist.github and 
 If this is different from the previous one, then the algorithm looks into the second line, if it contains a "t", then the microcontroller expects a text and shows the message on the display. If there is another character, e.g. a "b", then an image is expected. For the picture I use the website: https://www.dcode.fr/binary-image. There you can upload your black and white image and set the target width to 128 pixels. The image will then be converted to "0" and "1" only, so each black pixel becomes a 0 and each white pixel a 1. You can then simply enter this string in the third line of your text document on gist.github. So your text document could look like this:
 
 ![](https://i.imgur.com/07qDPxb.png)
+
+## Root Certificate
+My code uses the CA root certificate instead that is valid until 2031.
+
 
 ###### tags: `Lovebox` `Instruction`
