@@ -1,6 +1,5 @@
-**this is a fork from @julisa99'a original code**
-
-See [https://frightanic.com/iot/the-lovebox-a-gift-from-a-maker/]() for my project report and a description of the code improvements I integrated.
+**Forked from marcelstoer which is a fork of julisa99's original code**
+[https://frightanic.com/iot/the-lovebox-a-gift-from-a-maker/]()
 
 ↓↓↓ original README of the upstream (i.e. forked) repo ↓↓↓
 
